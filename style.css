@@ -1,0 +1,42 @@
+.content{
+    margin: 0px 5px 0px 5px;
+    padding: 5px 5px 5px 5px;
+    opacity: 0.9;
+    height: calc(100vh - 90px);
+    overflow: auto;
+}
+.content-title{
+    margin: 20px 10px 0px 10px;
+    height: 50px;
+    text-align: center;
+}
+.title-style{
+    font-size: 30px;
+    color: white;
+    font-family: "Microsoft YaHei UI";
+    font-weight: bold;
+}
+#toolContainer{
+    float: left; width: 200px; height:calc(100vh - 95px); background-color: white; 
+}
+#cesiumContainer {
+    margin-left: 200px; height: calc(100vh - 95px);
+}
+.toolbar{
+    width:100px; height: 600px; position:fixed;left:3%;top:15%;position: fixed;z-index: 999;opacity: 0.3;
+}
+.buttonStyle{
+    width: 80px;height: 20px;background-color:white;font-size: 8pt;color: black;
+}
+.toolLargeSpanStyle{
+    text-align:left; font-weight: 700 ; font-size: 20px; color:black; margin-left: 15px;cursor: pointer;
+}
+.toolLargeDivStyle{
+    width: 100%; height: 20px; padding: 10px 10px 10px 0px;cursor: pointer;
+}
+.toolSmallSpanStyle{
+    text-align:left; font-weight: 700 ; font-size: 14px; color:black; margin-left: 15px; cursor: pointer;
+}
+.toolSmallDivStyle{
+    width: 100%; height: 20px; padding: 10px 10px 10px 0px; cursor: pointer; display: none;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>风暴潮</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image\title-icon.jpg" type="image/x-icon"/>
+    <script src="cesium/Build/Cesium/Cesium.js"></script>
+    <script src="jquery-3.5.0.min.js"></script>
+    <style>
+        @import url(cesium/Build/Cesium/Widgets/widgets.css);
+    </style>
+</head>
+<body background="image\background.jpg">
+<div class="content-title">
+    <span class="title-style" style="align-items: center">风暴潮</span>
+</div>
+<div class="content">
+        <div id="toolContainer">
+          <div>
+
+            <div class="toolLargeDivStyle"><span class="toolLargeSpanStyle">天气场景</span></div>
+            <div class="toolSmallDivStyle" onclick="Rain_weather()"><span class="toolSmallSpanStyle">降雨场景</span></div>
+            <div class="toolSmallDivStyle" onclick="Snow_weather()"><span class="toolSmallSpanStyle">降雪场景</span></div>
+          </div>
+          <div>
+            <div class="toolLargeDivStyle"><span class="toolLargeSpanStyle">加载数据</span></div>
+            <div class="toolSmallDivStyle" onclick="GeoJsonData()"><span class="toolSmallSpanStyle">加载Geojson</span></div>
+            <div class="toolSmallDivStyle" onclick="Entity()"><span class="toolSmallSpanStyle">加载Entity</span></div>
+            <div class="toolSmallDivStyle" onclick="_3Dtiles()"><span class="toolSmallSpanStyle">加载3Dtiles</span></div>
+          </div>
+          </div>
+        <div id="cesiumContainer">
+            <script src="MapView-cesium.js"></script>
+            <script src="Cesium_detail.js"></script>
+        </div>
+</div>
+<script src="https://unpkg.com/shapefile@0.6"></script>
+<script>
+    shapefile.open("data\11_area.shp")
+      .then(source => source.read()
+        .then(function log(result) {
+          if (result.done) return;
+          console.log(result.value);
+          return source.read().then(log);
+        }))
+      .catch(error => console.error(error.stack));    
+    </script>
+</body>
+</html>
